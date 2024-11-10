@@ -1,0 +1,301 @@
+// Variables
+$colors: (
+  'white': rgba(255, 255, 255, 1),
+  'black': rgba(0, 0, 0, 1),
+  'primary': rgba(0, 63, 180, 1),
+  'gray': rgba(111, 111, 111, 1),
+  'light-gray': rgba(218, 218, 218, 1),
+  'text-gray': rgba(107, 107, 107, 1),
+  'border-gray': rgba(183, 183, 183, 1),
+  'dark-gray': rgba(50, 50, 50, 1)
+);
+
+// Font imports
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin arrow-button {
+  @include box-shadow;
+  font-size: 24px;
+  font-weight: 800;
+  cursor: pointer;
+  background: none;
+  padding: 10px 12px;
+  border: 1px solid map-get($colors, 'light-gray');
+  border-radius: 50%;
+  color: map-get($colors, 'gray');
+}
+
+@mixin box-shadow {
+  box-shadow: 4px 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 768px) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 480px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: 1200px) { @content; }
+  }
+}
+
+// Reset
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", serif;
+  color: map-get($colors, 'black');
+}
+
+// Featured Speakers Section
+.featured-speakers {
+  @include flex-center;
+  flex-direction: column;
+  padding: 0 20px;
+
+  &__header {
+    @include flex-center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 98px 0 65px;
+
+    @include responsive(mobile) {
+      margin-top: 20px;
+    }
+  }
+
+  &__title, &__subtitle {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  &__carousel {
+    @include flex-center;
+    gap: 20px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__button--prev, &__button--next {
+    @include arrow-button;
+  }
+
+  &__button--prev {
+    margin-right: 20px;
+  }
+
+  &__button--next {
+    margin-left: 20px;
+  }
+
+  &__cta-button {
+    background-color: map-get($colors, 'primary');
+    color: map-get($colors, 'white');
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 60px;
+    padding: 20px 100px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    @include responsive(mobile) {
+      padding: 12px 70px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  }
+}
+
+// Speaker Card
+.speaker__card {
+  background: map-get($colors, 'white');
+  @include box-shadow;
+  width: 285px;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &__photo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 16px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  &__position, &__description {
+    font-size: 18px;
+    font-weight: 400;
+    color: map-get($colors, 'text-gray');
+  }
+}
+
+// Modal
+.featured-speakers__modal {
+  display: none;
+  position: relative;
+  margin-bottom: 20px;
+
+  &__container {
+    @include flex-center;
+    border-radius: 10px;
+    @include box-shadow;
+
+    @include responsive(desktop) {
+      flex-direction: column;
+    }
+  }
+
+  &__profile, &__details {
+    padding: 20px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: map-get($colors, 'dark-gray');
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+}
+
+// Event Program Section
+.event-program {
+  position: relative;
+
+  &__prompt {
+    font-size: 18px;
+    position: absolute;
+    font-family: "Work Sans", sans-serif;
+    left: 120px;
+
+    @include responsive(mobile) {
+      left: 20px;
+      top: 20px;
+    }
+  }
+
+  &__nav-icon {
+    position: absolute;
+    top: 33px;
+    left: 440px;
+
+    @include responsive(tablet) {
+      left: 130px;
+    }
+
+    @include responsive(mobile) {
+      left: 120px;
+      top: 50px;
+    }
+  }
+}
+
+// Responsive Design Tweaks
+
+// Tablet (768px)
+@include responsive(tablet) {
+  .featured-speakers__carousel {
+    flex-direction: column;
+  }
+
+  .featured-speakers__list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .speaker__card {
+    width: 100%;
+  }
+
+  .featured-speakers__cta-button {
+    padding: 12px 60px;
+    font-size: 16px;
+  }
+
+  .event-program__prompt {
+    font-size: 16px;
+    left: 20px;
+  }
+
+  .event-program__nav-icon {
+    top: 50px;
+    left: 130px;
+  }
+}
+
+// Mobile (480px)
+@include responsive(mobile) {
+  .featured-speakers__carousel {
+    flex-direction: column;
+  }
+
+  .featured-speakers__list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .speaker__card {
+    width: 100%;
+  }
+
+  .featured-speakers__cta-button {
+    padding: 12px 50px;
+    font-size: 14px;
+  }
+
+  .event-program__prompt {
+    font-size: 14px;
+    left: 20px;
+    top: 30px;
+  }
+
+  .event-program__nav-icon {
+    top: 60px;
+    left: 120px;
+  }
+}

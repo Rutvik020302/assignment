@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Featured Speakers</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section class="featured-speakers">
+      <div class="featured-speakers__header">
+        <h1 class="featured-speakers__title">
+          View our Featured Speakers for the Event
+        </h1>
+        <p class="featured-speakers__subtitle">
+          Speakers are core contributors and industry thought leaders working at
+          companies that push for innovation.
+        </p>
+      </div>
+
+      <div class="featured-speakers__modal"></div>
+
+      <div class="featured-speakers__carousel">
+        <button class="featured-speakers__button--prev" aria-label="Previous slide">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+
+        <div class="featured-speakers__list"></div>
+
+        <button class="featured-speakers__button--next" aria-label="Next slide">
+          <i class="ri-arrow-right-s-line"></i>
+        </button>
+      </div>
+
+      <button class="featured-speakers__cta-button">See the Program</button>
+    </section>
+
+    <section class="event-program">
+      <div class="event-program__prompt">
+        Click here to see the full program
+      </div>
+      <div class="event-program__nav-icon">
+        <img src="./assets/Arrow.png" alt="Navigation Arrow" />
+      </div>
+    </section>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

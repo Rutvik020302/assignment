@@ -7,46 +7,60 @@ const modal = document.querySelector('.featured-speakers__modal');
 // Array of speaker objects containing all speaker information
 const allSpeakers = [
     {
-        name: 'Jane Smith',
-        company: 'TCS',
+        name: 'John Doe',
+        company: 'SpecBee',
         position: 'CEO',
         image: './assets/photo1.png',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
     },
     {
         name: 'John Doe',
-        company: 'IBM',
+        company: 'AcmeCrop',
         position: 'Chief Marketing Officer',
         image: './assets/photo2.png',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
     },
    
     {
-        name: 'Emily Johnson',
-        company: 'InnovateX',
+        name: 'John Doe',
+        company: 'SpecBee',
         position: 'Head of Product',
-        image: './assets/photo1.png',
+        image: './assets/photo3.png',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
     },
     {
-        name: 'Chris Lee',
-        company: 'DevCon',
+        name: 'John Doe',
+        company: 'Acquia',
         position: 'Lead Developer',
-        image: './assets/photo2.png',
+        image: './assets/photo4.png',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
     },
     {
-        name: 'David Brown',
-        company: 'Fintech World',
+        name: 'John Doe',
+        company: 'Pantheon',
         position: 'CTO',
         image: './assets/photo1.png',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
     },
     {
-        name: 'Laura Wilson',
-        company: 'HealthCorp',
+        name: 'John Doe',
+        company: 'AcmeCorp',
         position: 'Chief Strategy Officer',
         image: './assets/photo2.png',
+        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
+    },
+    {
+        name: 'John Doe',
+        company: 'SpecBee',
+        position: 'Chief Strategy Officer',
+        image: './assets/photo3.png',
+        description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
+    },
+    {
+        name: 'John Doe',
+        company: 'Acme',
+        position: 'Chief Strategy Officer',
+        image: './assets/photo4.png',
         description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci ad architecto! Ullam est nihil eius quam eligendi, soluta commodi.'
     }
 ];
